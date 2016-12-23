@@ -1,0 +1,41 @@
+# go vendor packages
+vendor/
+
+# logs
+*.log
+log/
+
+# lock
+*.lock
+
+# pids
+*.pid
+*.seed
+
+# for Windows
+Thumbs.db
+Desktop.ini
+
+# for OSX
+.DS_Store
+
+# for direnv
+.envrc
+
+# swp
+*.swp
+
+# sublime
+*.sublime-project
+
+# eclipse
+.project
+.settings/
+
+# golang
+bin/
+pkg/
+main
+
+# tmp
+tmp/
