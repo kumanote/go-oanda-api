@@ -9,6 +9,14 @@ golang implementation of the Oanda Rest API Wrapper.
 glide get github.com/kumanote/go-oanda-api
 ```
 
+### set Environment Variables
+
+set oanda api access token value to environment variable named "OANDA_PERSONAL_ACCESS_TOKEN"
+
+```
+$export OANDA_PERSONAL_ACCESS_TOKEN=your_oanda_api_access_token_value
+```
+
 ### example
 
 * import package
