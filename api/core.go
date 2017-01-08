@@ -45,6 +45,9 @@ func (o *Oanda) apiJsonUnmarshal(endpoint string, method string, parameters inte
 	if err != nil {
 		return err
 	}
+	if len(responseBody) < 1 {
+		return nil
+	}
 	err = json.Unmarshal(responseBody, val)
 	if err != nil {
 		return err
