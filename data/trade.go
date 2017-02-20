@@ -25,14 +25,14 @@ type Trade struct {
 	Price          float64   `json:"price"`
 	TakeProfit     float64   `json:"takeProfit"`
 	StopLoss       float64   `json:"stopLoss"`
-	TrailingStop   float64   `json:"trailingStop"`
+	TrailingStop   int       `json:"trailingStop"`
 	TrailingAmount float64   `json:"trailingAmount"`
 }
 
 type PatchTradeParam struct {
 	StopLoss     float64 `json:"stopLoss"`
 	TakeProfit   float64 `json:"takeProfit"`
-	TrailingStop float64 `json:"trailingStop"`
+	TrailingStop int     `json:"trailingStop"`
 }
 
 type CloseTradeResult struct {

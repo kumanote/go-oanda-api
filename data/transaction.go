@@ -30,7 +30,7 @@ type Transaction struct {
 	UpperBound               float64        `json:"upperBound"`
 	TakeProfitPrice          float64        `json:"takeProfitPrice"`
 	StopLossPrice            float64        `json:"stopLossPrice"`
-	TrailingStopLossDistance float64        `json:"trailingStopLossDistance"`
+	TrailingStopLossDistance int            `json:"trailingStopLossDistance"`
 	Pl                       float64        `json:"pl"`
 	Interest                 float64        `json:"interest"`
 	AccountBalance           float64        `json:"accountBalance"`

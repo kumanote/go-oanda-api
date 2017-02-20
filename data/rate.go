@@ -21,8 +21,8 @@ type Instrument struct {
 	pip             float64 `json:"pip"`
 	MaxTradeUnits   big.Int `json:"maxTradeUnits"`
 	Precision       float64 `json:"precision"`
-	MaxTrailingStop float64 `json:"maxTrailingStop"`
-	MinTrailingStop float64 `json:"minTrailingStop"`
+	MaxTrailingStop int     `json:"maxTrailingStop"`
+	MinTrailingStop int     `json:"minTrailingStop"`
 	MarginRate      float64 `json:"marginRate"`
 	Halted          bool    `json:"halted"`
 	InterestRate    float64 `json:"interestRate"`
