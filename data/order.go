@@ -29,7 +29,7 @@ type Order struct {
 	Expiry       time.Time `json:"expiry"`
 	UpperBound   float64   `json:"upperBound"`
 	LowerBound   float64   `json:"lowerBound"`
-	TrailingStop float64   `json:"trailingStop"`
+	TrailingStop int       `json:"trailingStop"`
 }
 
 type PostOrderParam struct {
@@ -43,7 +43,7 @@ type PostOrderParam struct {
 	UpperBound   float64   `json:"upperBound"`
 	StopLoss     float64   `json:"stopLoss"`
 	TakeProfit   float64   `json:"takeProfit"`
-	TrailingStop float64   `json:"trailingStop"`
+	TrailingStop int       `json:"trailingStop"`
 }
 
 type PostOrderResult struct {
@@ -60,7 +60,7 @@ type TradeOpened struct {
 	Side         string  `json:"side"`
 	TakeProfit   float64 `json:"takeProfit"`
 	StopLoss     float64 `json:"stopLoss"`
-	TrailingStop float64 `json:"trailingStop"`
+	TrailingStop int     `json:"trailingStop"`
 }
 
 type OrderOpened struct {
@@ -72,7 +72,7 @@ type OrderOpened struct {
 	Expiry       time.Time `json:"expiry"`
 	UpperBound   float64   `json:"upperBound"`
 	LowerBound   float64   `json:"lowerBound"`
-	TrailingStop float64   `json:"trailingStop"`
+	TrailingStop int       `json:"trailingStop"`
 }
 
 type PatchOrderParam struct {
@@ -83,7 +83,7 @@ type PatchOrderParam struct {
 	UpperBound   float64   `json:"upperBound"`
 	StopLoss     float64   `json:"stopLoss"`
 	TakeProfit   float64   `json:"takeProfit"`
-	TrailingStop float64   `json:"trailingStop"`
+	TrailingStop int       `json:"trailingStop"`
 }
 
 type DeleteOrderResult struct {
