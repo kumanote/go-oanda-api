@@ -2,39 +2,39 @@ package api
 
 import (
 	"github.com/kumanote/go-oanda-api/data"
-	"math/big"
+	"strconv"
 )
 
-func (o *Oanda) GetTrades(accountId big.Int, parameters interface{}) (*data.GetTrades, error) {
+func (o *Oanda) GetTrades(accountId int64, parameters interface{}) (*data.GetTrades, error) {
 	var ret data.GetTrades
-	endpoint := "/v1/accounts/" + accountId.String() + "/trades"
+	endpoint := "/v1/accounts/" + strconv.FormatInt(accountId, 10) + "/trades"
 	if err := o.apiJsonUnmarshal(endpoint, "GET", parameters, nil, &ret); err != nil {
 		return nil, err
 	}
 	return &ret, nil
 }
 
-func (o *Oanda) GetTrade(accountId big.Int, tradeId big.Int) (*data.Trade, error) {
+func (o *Oanda) GetTrade(accountId int64, tradeId int64) (*data.Trade, error) {
 	var ret data.Trade
-	endpoint := "/v1/accounts/" + accountId.String() + "/trades/" + tradeId.String()
+	endpoint := "/v1/accounts/" + strconv.FormatInt(accountId, 10) + "/trades/" + strconv.FormatInt(tradeId, 10)
 	if err := o.apiJsonUnmarshal(endpoint, "GET", nil, nil, &ret); err != nil {
 		return nil, err
 	}
 	return &ret, nil
 }
 
-func (o *Oanda) PatchTrade(accountId big.Int, tradeId big.Int, parameters interface{}) (*data.Trade, error) {
+func (o *Oanda) PatchTrade(accountId int64, tradeId int64, parameters interface{}) (*data.Trade, error) {
 	var ret data.Trade
-	endpoint := "/v1/accounts/" + accountId.String() + "/trades/" + tradeId.String()
+	endpoint := "/v1/accounts/" + strconv.FormatInt(accountId, 10) + "/trades/" + strconv.FormatInt(tradeId, 10)
 	if err := o.apiJsonUnmarshal(endpoint, "PATCH", parameters, nil, &ret); err != nil {
 		return nil, err
 	}
 	return &ret, nil
 }
 
-func (o *Oanda) CloseTrade(accountId big.Int, tradeId big.Int) (*data.CloseTradeResult, error) {
+func (o *Oanda) CloseTrade(accountId int64, tradeId int64) (*data.CloseTradeResult, error) {
 	var ret data.CloseTradeResult
-	endpoint := "/v1/accounts/" + accountId.String() + "/trades/" + tradeId.String()
+	endpoint := "/v1/accounts/" + strconv.FormatInt(accountId, 10) + "/trades/" + strconv.FormatInt(tradeId, 10)
 	if err := o.apiJsonUnmarshal(endpoint, "DELETE", nil, nil, &ret); err != nil {
 		return nil, err
 	}

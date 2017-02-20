@@ -186,6 +186,10 @@ func struct2map(i interface{}) map[string]string {
 			if includeDefault || vt != 0 {
 				value = strconv.Itoa(vt)
 			}
+		case int64:
+			if includeDefault || vt != 0 {
+				value = strconv.FormatInt(vt, 10)
+			}
 		case float64:
 			if includeDefault || vt != 0.0 {
 				value = strconv.FormatFloat(vt, 'f', 2, 64)

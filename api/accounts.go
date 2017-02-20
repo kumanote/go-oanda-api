@@ -2,7 +2,7 @@ package api
 
 import (
 	"github.com/kumanote/go-oanda-api/data"
-	"math/big"
+	"strconv"
 )
 
 func (o *Oanda) Accounts() (*data.Accounts, error) {
@@ -14,9 +14,9 @@ func (o *Oanda) Accounts() (*data.Accounts, error) {
 	return &ret, nil
 }
 
-func (o *Oanda) AccountInformation(accountId big.Int) (*data.AccountInformation, error) {
+func (o *Oanda) AccountInformation(accountId int64) (*data.AccountInformation, error) {
 	var ret data.AccountInformation
-	endpoint := "/v1/accounts/" + accountId.String()
+	endpoint := "/v1/accounts/" + strconv.FormatInt(accountId, 10)
 	if err := o.apiJsonUnmarshal(endpoint, "GET", nil, nil, &ret); err != nil {
 		return nil, err
 	}

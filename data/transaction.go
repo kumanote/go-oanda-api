@@ -1,16 +1,15 @@
 package data
 
 import (
-	"math/big"
 	"time"
 )
 
 type GetTransactionsParam struct {
-	MaxId      big.Int `json:"maxId"`
-	MinId      big.Int `json:"minId"`
-	Count      int     `json:"count"`
-	Instrument string  `json:"instrument"`
-	Ids        string  `json:"ids"`
+	MaxId      int64  `json:"maxId"`
+	MinId      int64  `json:"minId"`
+	Count      int    `json:"count"`
+	Instrument string `json:"instrument"`
+	Ids        string `json:"ids"`
 }
 
 type GetTransactions struct {
@@ -18,8 +17,8 @@ type GetTransactions struct {
 }
 
 type Transaction struct {
-	Id                       big.Int        `json:"id"`
-	AccountId                big.Int        `json:"accountId"`
+	Id                       int64          `json:"id"`
+	AccountId                int64          `json:"accountId"`
 	Time                     time.Time      `json:"time"`
 	Type                     string         `json:"type"`
 	Instrument               string         `json:"instrument"`
@@ -34,8 +33,8 @@ type Transaction struct {
 	Pl                       float64        `json:"pl"`
 	Interest                 float64        `json:"interest"`
 	AccountBalance           float64        `json:"accountBalance"`
-	OrderId                  big.Int        `json:"orderId"`
-	TradeId                  big.Int        `json:"tradeId"`
+	OrderId                  int64          `json:"orderId"`
+	TradeId                  int64          `json:"tradeId"`
 	TradeOpened              TxTradeOpened  `json:"tradeOpened"`
 	TradeReduced             TxTradeReduced `json:"tradeReduced"`
 	Expiry                   time.Time      `json:"expiry"`
@@ -45,12 +44,12 @@ type Transaction struct {
 }
 
 type TxTradeOpened struct {
-	Id    big.Int `json:"id"`
-	Units int     `json:"units"`
+	Id    int64 `json:"id"`
+	Units int   `json:"units"`
 }
 
 type TxTradeReduced struct {
-	Id       big.Int `json:"id"`
+	Id       int64   `json:"id"`
 	Units    int     `json:"units"`
 	Pl       float64 `json:"pl"`
 	Interest float64 `json:"interest"`

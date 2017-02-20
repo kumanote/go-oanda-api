@@ -1,9 +1,5 @@
 package data
 
-import (
-	"math/big"
-)
-
 type GetPositions struct {
 	Positions []Position `json:"positions"`
 }
@@ -16,8 +12,8 @@ type Position struct {
 }
 
 type ClosePositionResult struct {
-	Ids        []big.Int `json:"ids"`
-	Instrument string    `json:"instrument"`
-	TotalUnits int       `json:"totalUnits"`
-	Price      float64   `json:"price"`
+	Ids        []int64 `json:"ids"`
+	Instrument string  `json:"instrument"`
+	TotalUnits int     `json:"totalUnits"`
+	Price      float64 `json:"price"`
 }
