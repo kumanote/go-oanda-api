@@ -1,14 +1,13 @@
 package data
 
 import (
-	"math/big"
 	"time"
 )
 
 type InstrumentsParam struct {
-	AccountId   big.Int `json:"accountId"`
-	Fields      string  `json:"fields"`
-	Instruments string  `json:"instruments"`
+	AccountId   int64  `json:"accountId"`
+	Fields      string `json:"fields"`
+	Instruments string `json:"instruments"`
 }
 
 type Instruments struct {
@@ -19,7 +18,7 @@ type Instrument struct {
 	Instrument      string  `json:"instrument"`
 	DisplayName     string  `json:"displayName"`
 	pip             float64 `json:"pip"`
-	MaxTradeUnits   big.Int `json:"maxTradeUnits"`
+	MaxTradeUnits   int64   `json:"maxTradeUnits"`
 	Precision       float64 `json:"precision"`
 	MaxTrailingStop int     `json:"maxTrailingStop"`
 	MinTrailingStop int     `json:"minTrailingStop"`

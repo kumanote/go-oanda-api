@@ -1,15 +1,14 @@
 package data
 
 import (
-	"math/big"
 	"time"
 )
 
 type GetTradesParam struct {
-	MaxId      big.Int `json:"maxId"`
-	Count      int     `json:"count"`
-	Instrument string  `json:"instrument"`
-	Ids        string  `json:"ids"`
+	MaxId      int64  `json:"maxId"`
+	Count      int    `json:"count"`
+	Instrument string `json:"instrument"`
+	Ids        string `json:"ids"`
 }
 
 type GetTrades struct {
@@ -17,7 +16,7 @@ type GetTrades struct {
 }
 
 type Trade struct {
-	Id             big.Int   `json:"id"`
+	Id             int64     `json:"id"`
 	Units          int       `json:"units"`
 	Side           string    `json:"side"`
 	Instrument     string    `json:"instrument"`
@@ -36,7 +35,7 @@ type PatchTradeParam struct {
 }
 
 type CloseTradeResult struct {
-	Id         big.Int   `json:"id"`
+	Id         int64     `json:"id"`
 	Price      float64   `json:"price"`
 	Instrument string    `json:"instrument"`
 	Profit     float64   `json:"profit"`

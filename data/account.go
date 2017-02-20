@@ -1,22 +1,18 @@
 package data
 
-import (
-	"math/big"
-)
-
 type Accounts struct {
 	Accounts []Account `json:"accounts"`
 }
 
 type Account struct {
-	AccountId       big.Int `json:"accountId"`
+	AccountId       int64   `json:"accountId"`
 	AccountName     string  `json:"accountName"`
 	AccountCurrency string  `json:"accountCurrency"`
 	MarginRate      float64 `json:"marginRate"`
 }
 
 type AccountInformation struct {
-	AccountId       big.Int `json:"accountId"`
+	AccountId       int64   `json:"accountId"`
 	AccountName     string  `json:"accountName"`
 	Balance         float64 `json:"balance"`
 	UnrealizedPl    float64 `json:"unrealizedPl"`
